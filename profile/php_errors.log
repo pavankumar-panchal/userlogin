@@ -1,0 +1,1 @@
+[11-Nov-2014 17:27:14 Asia/Calcutta] PHP Warning:  mysqli_connect(): Can't connect to MySQL server on '192.168.170.169' (4) in /home/manju/public/userlogin.relyonsoft.net/public/functions/phpfunctions.php on line 13

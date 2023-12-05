@@ -1,0 +1,136 @@
+body
+{
+BORDER-TOP-WIDTH: 0px; 
+PADDING-RIGHT: 0px; 
+min-width: 770px; 
+PADDING-LEFT: 0px; 
+BORDER-LEFT-WIDTH: 0px; 
+FONT-SIZE: 12px; 
+BACKGROUND: #FefeFe repeat-x; 
+BORDER-BOTTOM-WIDTH: 0px; 
+PADDING-BOTTOM: 0px; 
+PADDING-TOP: 0px; 
+FONT-FAMILY: Arial, Tahoma, Helvetica, sans-serif; 
+BORDER-RIGHT-WIDTH: 0px;
+color:#666666
+}
+A {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+
+.content
+{
+
+}
+
+.content A{
+	COLOR: #006699; TEXT-DECORATION: none
+}
+
+.content A:hover{
+	COLOR: #000000; TEXT-DECORATION: none
+}
+
+TD.columnBorder {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; WIDTH: 2px; PADDING-TOP: 0px
+}
+TD.pagebody {
+	padding-left:10px; padding-right:2px; padding-top:2px; padding-bottom:2px;
+	border-left: #3f7c5f solid 1px; border-right: #3f7c5f solid 1px; 
+	border-top: #3f7c5f solid 1px; border-bottom: #3f7c5f solid 2px
+}
+.pagebodyheading {
+	BORDER-RIGHT: #b0b0b0 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #b0b0b0 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; BORDER-LEFT: #b0b0b0 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #b0b0b0 1px solid; BACKGROUND-COLOR: #dbe6de
+}
+.elevensize
+{
+FONT-SIZE: 11px
+}
+.contentsubbox{border:1px solid #666666;}
+
+.formfields{border:#333333 1px solid}
+.formbutton{border:#b0b0b0 solid 1px; background-color:#dbe6de}
+
+.getquotebox{border:#333333 1px solid; padding:4px; background-color:#F1F0C9}
+
+#paymentbg {
+	background: url(../images/payment-bg.gif) #f8fafc repeat-x
+}
+.buyonlinebox{border:#333333 1px solid; padding:4px; background-color:#FBF9D9}
+.subheading-font
+{
+	font-size: 22px;
+	font-weight:bold;
+	font-family: calibri;
+	color: #000000;
+	padding-left:5px;
+}
+.displayfont
+{
+ font-size:13px;
+ color:#212121;
+ font-family:calibri;
+}
+.fontstyle
+{
+ font-size:13px;
+ color:#666666;
+ font-family:calibri;
+}
+.blueline
+{
+	background: url(../images/blueline.gif) repeat-x top;
+}
+.subfonts
+{
+	font-size:18px;
+	font-weight:bold;
+	color:#1f578e;
+	cursor:pointer;
+}
+
+.errorbox
+{
+	padding-left:25px; 
+	padding-top:4px;
+	padding-bottom:4px;
+	/*padding-right:4px;*/
+	color:#333333;
+    font-size:11px;
+	border:1px solid #e82a2a;
+	font-weight:bold;
+	background:url(../images/icon_error.gif) left no-repeat #ffeaea;
+	
+}
+
+.diabledatefield
+{
+	
+	BORDER: 1px SOLID #4C77B6;
+	BACKGROUND-COLOR: #FEE9ED;
+	COLOR: #cccccc;
+	FONT-FAMILY: Verdana, Tahoma;
+	FONT-SIZE: 11px;
+	BORDER: 1px SOLID #666666;
+	margin: 0px;
+	padding: 2px 2px 2px 2px;
+	vertical-align: middle;
+}
+
+.swiftselect-mandatory
+{
+	BORDER: 1px SOLID #4C77B6;
+	BACKGROUND-COLOR: #F0F0F0;
+	COLOR: #000000;
+	FONT-FAMILY: Verdana, Tahoma;
+	FONT-SIZE: 11px;
+	BORDER: 1px SOLID #666666;
+	margin: 0px;
+	padding: 1px;
+	vertical-align: middle;
+	Z-INDEX: 11;
+	/*position:relative;*/
+}
