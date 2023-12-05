@@ -1,4 +1,4 @@
-<?
+<?php
 include("../functions/phpfunctions.php"); 
 $ResponseCode = 0;
 $company = 'RELYON';
@@ -29,11 +29,11 @@ function returnhomepage()
 </head>
 <body>
 <table width="771" border="0" cellpadding="0" cellspacing="0" align="center">
-<tr valign="top"><td><? include("../inc/header2.php"); ?></td>
+<tr valign="top"><td><?php include("../inc/header2.php"); ?></td>
 </tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td><table width="771px" border="0" align="center" cellpadding="0" cellspacing="0" >
-          <? if($ResponseCode == 0) { ?>
+          <?php if($ResponseCode == 0) { ?>
           <tr>
             <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
@@ -58,10 +58,10 @@ function returnhomepage()
                               <td colspan="2"><table width="90%" border="0" cellspacing="0" cellpadding="5" align="center">
                                   <tr>
                                     <td width="45%" valign="top" class="displayfont"><strong>Payment from :</strong><br />
-                                      <? echo($company)?><br />
-                                      <? echo('('.$contactperson.')')?><br />
-                                      <? echo($address)?><br />
-                                      <? echo($place)?> : <? echo($pincode)?> </td>
+                                      <?php echo($company)?><br />
+                                      <?php echo('('.$contactperson.')')?><br />
+                                      <?php echo($address)?><br />
+                                      <?php echo($place)?> : <?php echo($pincode)?> </td>
                                     <td width="45%"  valign="top" class="displayfont"><strong>Payment To :</strong><br />
                                       Relyon Softech Ltd<br />
                                       No. 73, Shreelekha Complex, <br />
@@ -72,7 +72,7 @@ function returnhomepage()
                                 </table></td>
                             </tr>
                             <tr>
-                              <td colspan="2" class="fontstyle" ><p align="left">You have been successfully paid for Rs. <? echo($paymentamount.'.00')?>. An email also have been sent to <font color="#FF0000"><? echo($emailid)?></font> with the confirmation.<br />
+                              <td colspan="2" class="fontstyle" ><p align="left">You have been successfully paid for Rs. <?php echo($paymentamount.'.00')?>. An email also have been sent to <font color="#FF0000"><?php echo($emailid)?></font> with the confirmation.<br />
                                 </p></td>
                             </tr>
                            
@@ -84,10 +84,10 @@ function returnhomepage()
                                   <tr>
                                     <td><table width="400px" border="0" cellspacing="0" cellpadding="3" align="center" style="border:solid 1px #D4D4D4">
                                         <tr>
-                                          <td class="displayfont"><p align="center"><strong>Transaction Status:</strong> <? echo($Message); ?><br />
-                                              <strong>Relyon Transaction ID:</strong> <? echo($TxnID); ?><br />
-                                              <strong>ICICI Transaction reference Number:</strong> <? echo($ePGTxnID); ?><br />
-                                              <strong>Authorization ID: </strong> <? echo($AuthIdCode) ?> <br />
+                                          <td class="displayfont"><p align="center"><strong>Transaction Status:</strong> <?php echo($Message); ?><br />
+                                              <strong>Relyon Transaction ID:</strong> <?php echo($TxnID); ?><br />
+                                              <strong>ICICI Transaction reference Number:</strong> <?php echo($ePGTxnID); ?><br />
+                                              <strong>Authorization ID: </strong> <?php echo($AuthIdCode) ?> <br />
                                             </p></td>
                                         </tr>
                                         
@@ -123,7 +123,7 @@ function returnhomepage()
                 </tr>
               </table></td>
           </tr>
-          <? }else{?>
+          <?php }else{?>
           <tr>
             <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="3" style="border:solid 2px #272727">
                 <tr>
@@ -159,9 +159,9 @@ function returnhomepage()
                             <tr>
                               <td><table width="400px" border="0" cellspacing="0" cellpadding="3" align="center" style="border:solid 1px #D4D4D4" >
                                   <tr>
-                                    <td class="displayfont"><p align="center"><strong>Transaction Status:</strong><? echo($Message); ?><br />
-                                        <strong>Relyon Transaction ID:</strong> <? echo($TxnID); ?><br />
-                                        <strong>ICICI Transaction reference Number:</strong> <? echo($ePGTxnID); ?><br />
+                                    <td class="displayfont"><p align="center"><strong>Transaction Status:</strong><?php echo($Message); ?><br />
+                                        <strong>Relyon Transaction ID:</strong> <?php echo($TxnID); ?><br />
+                                        <strong>ICICI Transaction reference Number:</strong> <?php echo($ePGTxnID); ?><br />
                                       </p></td>
                                   </tr>
                                 </table></td>
@@ -179,7 +179,7 @@ function returnhomepage()
                 </tr>
               </table></td>
           </tr>
-          <? }?>
+          <?php }?>
           <tr>
             <td></td>
           </tr>
@@ -189,7 +189,7 @@ function returnhomepage()
 <td>
 </td>
 </tr>
-<tr valign="top"><td><? include("../inc/footer.php"); ?></td>
+<tr valign="top"><td><?php include("../inc/footer.php"); ?></td>
 </tr>
 </table>
 </body>

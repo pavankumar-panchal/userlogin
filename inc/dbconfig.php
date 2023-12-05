@@ -1,4 +1,4 @@
-<?
+<?php
 	//Define the connection parameters - MySQL
 	
 	$dbhost = "localhost";	$dbuser = "root";	$dbpwd = "";	$dbname = "test_live";

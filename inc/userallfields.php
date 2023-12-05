@@ -1,4 +1,4 @@
-<?
+<?php
 $query = "SELECT * FROM users WHERE emailid = '".$email."'";
 $result = runmysqlqueryfetch($query);
 

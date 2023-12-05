@@ -1,4 +1,4 @@
-<?
+<?php
 //Read email ID from Cookie
 if(isset($_COOKIE['confirmemailid']))
 	$confirmemailid = $_COOKIE['confirmemailid']; 
@@ -17,7 +17,7 @@ if(isset($_COOKIE['confirmemailid']))
 </head>
 <body>
 <table width="771" border="0" cellpadding="0" cellspacing="0" align="center">
-<tr valign="top"><td><? include("./inc/header.php"); ?></td>
+<tr valign="top"><td><?php include("./inc/header.php"); ?></td>
 </tr>
 <tr valign="top">
 <td><div>&nbsp;</div>
@@ -39,7 +39,7 @@ if(isset($_COOKIE['confirmemailid']))
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Your account  password has been sent over email to <? echo($confirmemailid); ?>.</td>
+    <td>Your account  password has been sent over email to <?php echo($confirmemailid); ?>.</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -56,13 +56,13 @@ if(isset($_COOKIE['confirmemailid']))
 </table>
 </td>
 <td class="columnBorder">&nbsp;</td>
-<td width="218" valign="top" style="padding:5px; border-left: #3f7c5f solid 1px; border-right: #3f7c5f solid 1px; border-top: #3f7c5f solid 1px; border-bottom: #3f7c5f solid 2px"><? include("./inc/incmemberbenifits.php"); ?></td>
+<td width="218" valign="top" style="padding:5px; border-left: #3f7c5f solid 1px; border-right: #3f7c5f solid 1px; border-top: #3f7c5f solid 1px; border-bottom: #3f7c5f solid 2px"><?php include("./inc/incmemberbenifits.php"); ?></td>
 </tr>
 </table>	
 <div>&nbsp;</div><BR>
 </td>
 </tr>
-<tr valign="top"><td><? include("./inc/footer.php"); ?></td>
+<tr valign="top"><td><?php include("./inc/footer.php"); ?></td>
 </tr>
 </table>
 </body>

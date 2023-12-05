@@ -1,4 +1,4 @@
-<?
+<?php
 include("./functions/phpfunctions.php");
 
 //Check whether freshly loaded page or Submitted page

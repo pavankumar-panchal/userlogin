@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 //Check whether already logged in. If so redirect to valid user page
 session_start();

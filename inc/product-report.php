@@ -1,4 +1,4 @@
-<?
+<?php
 	$query = "SELECT id,productname,category as productgroup FROM products order by productname;";
 	$result = runmysqlquery($query);
 	while($fetch = mysqli_fetch_array($result))

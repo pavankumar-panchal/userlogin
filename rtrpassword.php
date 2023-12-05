@@ -1,4 +1,4 @@
-<?
+<?php
 $secquestion = "";
 
 include("./functions/phpfunctions.php");
@@ -122,7 +122,7 @@ elseif($_POST['retrive'] == "Retrive")
 </head>
 <body>
 <table width="771" border="0" cellpadding="0" cellspacing="0" align="center">
-<tr valign="top"><td><? include("./inc/header.php"); ?></td>
+<tr valign="top"><td><?php include("./inc/header.php"); ?></td>
 </tr>
 <tr valign="top">
 <td><div>&nbsp;</div>
@@ -149,7 +149,7 @@ elseif($_POST['retrive'] == "Retrive")
     <td>
 	<form action="" method="post" name="rtrpassword1" id="rtrpassword1">
 	<table width="100%" border="0" cellpadding="2" cellspacing="0">
-<?  
+<?php  
 if($message1 <> "")
 echo('<tr>
     <td bgcolor="#FFFFCC" style="border: dashed 1px #999999" colspan="3"><div align="center"><font color="#339900">'.$message1.'</font></div></td>
@@ -191,7 +191,7 @@ echo('  <tr>
   <tr>
     <td><form action="" method="post" name="rtrpassword2" id="rtrpassword2">
       <table width="100%" border="0" cellpadding="2" cellspacing="0">
-<?  
+<?php  
 if($message2 <> "")
 echo('<tr>
     <td bgcolor="#FFFFCC" style="border: dashed 1px #999999" colspan="3"><div align="center"><font color="#339900">'.$message2.'</font></div></td>
@@ -207,7 +207,7 @@ echo('  <tr>
 ?>
         <tr>
           <td width="22%"><strong>eMail ID </strong>:</td>
-          <td colspan="2"><input name="usremailid2" type="text" class="formfields" id="usremailid2" value="<? echo($email); ?>" size="30" maxlength="50" /></td>
+          <td colspan="2"><input name="usremailid2" type="text" class="formfields" id="usremailid2" value="<?php echo($email); ?>" size="30" maxlength="50" /></td>
         </tr>
         <tr>
           <td>&nbsp;</td>
@@ -215,7 +215,7 @@ echo('  <tr>
         </tr>
         <tr>
           <td><strong>Security Question  </strong>:</td>
-          <td colspan="2"><input name="secquestion" type="text" class="formfields" id="secquestion" value="<? echo($secquestion); ?>" size="30" maxlength="50" readonly="true" /></td>
+          <td colspan="2"><input name="secquestion" type="text" class="formfields" id="secquestion" value="<?php echo($secquestion); ?>" size="30" maxlength="50" readonly="true" /></td>
         </tr>
         <tr>
           <td><strong>Security Answer </strong>:</td>
@@ -230,7 +230,7 @@ echo('  <tr>
         <tr>
           <td>&nbsp;</td>
           <td>&nbsp;</td>
-          <td><? if($secquestion <> "") echo('<input name="retrive" class="formbutton" type="submit" id="retrive" value="Retrive" />'); ?>
+          <td><?php if($secquestion <> "") echo('<input name="retrive" class="formbutton" type="submit" id="retrive" value="Retrive" />'); ?>
             &nbsp;&nbsp;
             <input name="reset2" type="reset" class="formbutton" id="reset2" value="Clear" /></td>
         </tr>
@@ -246,13 +246,13 @@ echo('  <tr>
 </table>
 </td>
 <td class="columnBorder">&nbsp;</td>
-<td width="218" valign="top" style="padding:5px; border-left: #3f7c5f solid 1px; border-right: #3f7c5f solid 1px; border-top: #3f7c5f solid 1px; border-bottom: #3f7c5f solid 2px"><? include("./inc/incmemberbenifits.php"); ?></td>
+<td width="218" valign="top" style="padding:5px; border-left: #3f7c5f solid 1px; border-right: #3f7c5f solid 1px; border-top: #3f7c5f solid 1px; border-bottom: #3f7c5f solid 2px"><?php include("./inc/incmemberbenifits.php"); ?></td>
 </tr>
 </table>	
 <div>&nbsp;</div><BR>
 </td>
 </tr>
-<tr valign="top"><td><? include("./inc/footer.php"); ?></td>
+<tr valign="top"><td><?php include("./inc/footer.php"); ?></td>
 </tr>
 </table>
 </body>

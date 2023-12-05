@@ -1,5 +1,5 @@
 
-<?
+<?php
 if($_GET['phoneno'] == '') exit;
 
 if(checkrelyondnd($_GET['phoneno']))

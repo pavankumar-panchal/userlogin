@@ -6,28 +6,28 @@
   <td valign="top" style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; height: 4px; PADDING-TOP: 0px"></td>
 </tr>
       <tr>
-        <td colspan="2"><? echo($name); ?></td>
+        <td colspan="2"><?php echo($name); ?></td>
       </tr>
       <tr>
-        <td colspan="2" class="elevensize"><? echo($company); ?></td>
+        <td colspan="2" class="elevensize"><?php echo($company); ?></td>
       </tr>
       <tr>
-        <td colspan="2" class="elevensize"><? echo($address); ?></td>
+        <td colspan="2" class="elevensize"><?php echo($address); ?></td>
       </tr>
       <tr>
-        <td colspan="2" class="elevensize"><? echo($place); ?></td>
+        <td colspan="2" class="elevensize"><?php echo($place); ?></td>
       </tr>
       <tr>
-        <td colspan="2" class="elevensize"><? echo($state); ?></td>
+        <td colspan="2" class="elevensize"><?php echo($state); ?></td>
       </tr>
       <tr>
-        <td colspan="2" class="elevensize">Phone: <? echo($phone); ?></td>
+        <td colspan="2" class="elevensize">Phone: <?php echo($phone); ?></td>
       </tr>
       <tr>
-        <td colspan="2" class="elevensize">Email : <? echo($emailid); ?></td>
+        <td colspan="2" class="elevensize">Email : <?php echo($emailid); ?></td>
       </tr>
       <tr>
-        <td colspan="2" class="elevensize">Existing Customer : <? echo($existingcust); ?></td>
+        <td colspan="2" class="elevensize">Existing Customer : <?php echo($existingcust); ?></td>
       </tr>
 
       <tr>
