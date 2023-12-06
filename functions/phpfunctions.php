@@ -102,6 +102,14 @@ function runmysqlqueryfetch($query)
 	return $fetchresult;
 }
 
+
+
+
+
+
+
+
+
 function runsppdbquery($query)
 {
 	$sppdbhost = "localhost";
@@ -204,42 +212,91 @@ function generatepwd()
 	return $usrpassword;
 }
 
+
+
+
 function checkemailaddress($email) 
 {
-	// First, we check that there's one @ symbol, and that the lengths are right
-	if (!ereg("^[^@]{1,64}@[^@]{1,255}$", $email)) 
-	{
-		// Email invalid because wrong number of characters in one section, or wrong number of @ symbols.
-		return false;
-	}
-	// Split it into sections to make life easier
-	$email_array = explode("@", $email);
-	$local_array = explode(".", $email_array[0]);
-	for ($i = 0; $i < sizeof($local_array); $i++) 
-	{
-		if (!ereg("^(([A-Za-z0-9!#$%&'*+/=?^_`{|}~-][A-Za-z0-9!#$%&'*+/=?^_`{|}~\.-]{0,63})|(\"[^(\\|\")]{0,62}\"))$", $local_array[$i])) 
-		{
-			return false;
-		}
-	}
-	if (!ereg("^\[?[0-9\.]+\]?$", $email_array[1])) 
-	{ 
-		// Check if domain is IP. If not, it should be valid domain name
-		$domain_array = explode(".", $email_array[1]);
-		if (sizeof($domain_array) < 2) 
-		{
-			return false; // Not enough parts to domain
-		}
-		for ($i = 0; $i < sizeof($domain_array); $i++) 
-		{
-			if (!ereg("^(([A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9])|([A-Za-z0-9]+))$", $domain_array[$i])) 
-			{
-				return false;
-			}
-		}
-	}
-	return true;
+    // First, we check that there's one @ symbol, and that the lengths are right
+    if (!preg_match("/^[^@]{1,64}@[^@]{1,255}$/", $email)) 
+    {
+        // Email invalid because wrong number of characters in one section, or wrong number of @ symbols.
+        return false;
+    }
+
+    // Split it into sections to make life easier
+    $email_array = explode("@", $email);
+    $local_array = explode(".", $email_array[0]);
+
+    foreach ($local_array as $local_part) 
+    {
+        if (!preg_match('/^(([A-Za-z0-9!#$%&\'*+\/=?^_`{|}~-][A-Za-z0-9!#$%&\'*+\/=?^_`{|}~\.-]{0,63})|("([^\\"]|\\\\.){0,62}"))$/', $local_part)) 
+        {
+            return false;
+        }
+    }
+
+    if (!preg_match("/^\[?[0-9\.]+\]?$/", $email_array[1])) 
+    { 
+        // Check if domain is IP. If not, it should be a valid domain name
+        $domain_array = explode(".", $email_array[1]);
+
+        if (count($domain_array) < 2) 
+        {
+            return false; // Not enough parts to domain
+        }
+
+        foreach ($domain_array as $domain_part) 
+        {
+            if (!preg_match('/^(([A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9])|([A-Za-z0-9]+))$/', $domain_part)) 
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }
+
+
+// function checkemailaddress($email) 
+// {
+// 	First, we check that there's one @ symbol, and that the lengths are right
+// 	if (!ereg("^[^@]{1,64}@[^@]{1,255}$", $email)) 
+// 	{
+// 		Email invalid because wrong number of characters in one section, or wrong number of @ symbols.
+// 		return false;
+// 	}
+// 	Split it into sections to make life easier
+// 	$email_array = explode("@", $email);
+// 	$local_array = explode(".", $email_array[0]);
+// 	for ($i = 0; $i < sizeof($local_array); $i++) 
+// 	{
+// 		if (!ereg("^(([A-Za-z0-9!#$%&'*+/=?^_`{|}~-][A-Za-z0-9!#$%&'*+/=?^_`{|}~\.-]{0,63})|(\"[^(\\|\")]{0,62}\"))$", $local_array[$i])) 
+// 		{
+// 			return false;
+// 		}
+// 	}
+// 	if (!ereg("^\[?[0-9\.]+\]?$", $email_array[1])) 
+// 	{ 
+// 		Check if domain is IP. If not, it should be valid domain name
+// 		$domain_array = explode(".", $email_array[1]);
+// 		if (sizeof($domain_array) < 2) 
+// 		{
+// 			return false; 
+// 		}
+// 		for ($i = 0; $i < sizeof($domain_array); $i++) 
+// 		{
+// 			if (!ereg("^(([A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9])|([A-Za-z0-9]+))$", $domain_array[$i])) 
+// 			{
+// 				return false;
+// 			}
+// 		}
+// 	}
+// 	return true;
+// }
+
+
 
 function replacemailvariable($content,$array)
 {
@@ -268,21 +325,12 @@ function replacemailvariablenew($content,$array)
 
 function fullurl()
 {
-    $s = empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on" ? "s" : "");
-    $protocol = substr(strtolower($_SERVER["SERVER_PROTOCOL"]), 0, strpos(strtolower($_SERVER["SERVER_PROTOCOL"]), "/")) . $s;
-    $port = ($_SERVER["SERVER_PORT"] == "80") ? "" : (":" . $_SERVER["SERVER_PORT"]);
-    return $protocol . "://" . $_SERVER['SERVER_NAME'] . $port . $_SERVER['REQUEST_URI'];
+	// $s = (empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on" )) ? "s" : "";
+	$s = empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on" ? "s" : "");
+	$protocol = substr(strtolower($_SERVER["SERVER_PROTOCOL"]), 0, strpos(strtolower($_SERVER["SERVER_PROTOCOL"]), "/")) . $s;
+	$port = ($_SERVER["SERVER_PORT"] == "80") ? "" : (":".$_SERVER["SERVER_PORT"]);
+	return $protocol . "://" . $_SERVER['SERVER_NAME'] . $port . $_SERVER['REQUEST_URI'];
 }
-
-
-
-// function fullurl()
-// {
-// 	$s = empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on") ? "s" : "";
-// 	$protocol = substr(strtolower($_SERVER["SERVER_PROTOCOL"]), 0, strpos(strtolower($_SERVER["SERVER_PROTOCOL"]), "/")) . $s;
-// 	$port = ($_SERVER["SERVER_PORT"] == "80") ? "" : (":".$_SERVER["SERVER_PORT"]);
-// 	return $protocol . "://" . $_SERVER['SERVER_NAME'] . $port . $_SERVER['REQUEST_URI'];
-// }
 
 function sendsms($servicename, $tonumber, $smstext, $senddate, $sendtime)
 {

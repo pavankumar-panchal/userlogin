@@ -134,7 +134,7 @@ if($_POST['createuser'] == "Create User")
 <body>
 <table width="771" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr valign="top"><td>
-<? include("./inc/header.php"); ?></td></tr>
+<?php include("./inc/header.php"); ?></td></tr>
 <tr valign="top">
   <td height="20"></td>
 </tr>
@@ -166,7 +166,7 @@ if($_POST['createuser'] == "Create User")
           <tr>
             <td colspan="4" class="pagebodyheading"><strong>Signup Information </strong></td>
           </tr>
-          <?  
+          <?php  
 if($errormessage <> "")
 echo('<tr>
     <td bgcolor="#FFFFCC" style="border: dashed 1px #999999" colspan="4"><div align="center"><font color="#FF0000">'.$errormessage.'</font></div></td>
@@ -215,12 +215,12 @@ echo('  <tr>
                     <tr>
             <td width="24%">Type :</td>
             <td colspan="2"><select name="usrtype" class="formfields" id="usrtype" style="width:200px" >
-                <option value="" selected="selected">- - -Make a Selection- - -</option><? include('inc/usertype.php'); ?></select></td>
+                <option value="" selected="selected">- - -Make a Selection- - -</option><?php include('inc/usertype.php'); ?></select></td>
           </tr>
           <tr>
             <td>Category :</td>
             <td colspan="2"><select name="usrcategory" class="formfields" id="usrcategory" style="width:200px" >
-                <option value="" selected="selected">- - -Make a Selection- - -</option><? include('inc/usercategory.php'); ?></select></td>
+                <option value="" selected="selected">- - -Make a Selection- - -</option><?php include('inc/usercategory.php'); ?></select></td>
           </tr>
           <tr>
             <td height="20"></td>
@@ -377,7 +377,7 @@ echo('  <tr>
       <td class="elevensize"><div align="justify">
         <p>Note:</p>
         <ol>
-          <li>Fraud Prevention purposes, we have recorded &quot;<? echo(getenv("REMOTE_ADDR")); ?>&quot; as your connection IP Address and also recorded the time of your submission</li>
+          <li>Fraud Prevention purposes, we have recorded &quot;<?php echo(getenv("REMOTE_ADDR")); ?>&quot; as your connection IP Address and also recorded the time of your submission</li>
           <li>Email ID Provided above will be your user ID for future logins. Account password will be sent to this e-mail address.</li>
           <li>By providing your information and continuing, you are agreeing to the <a href="http://www.relyonsoft.com/help/online.htm" target="_blank">Relyon Terms of Use</a> and <a href="http://www.relyonsoft.com/help/privacy.htm" target="_blank">Privacy Policy</a>, including communications from Relyon. </li>
           <li>By submitting this information, you agree that Relyon may contact you by mail, email or telephone to provide information and discuss your interest in the Relyon products and Services.</li>
@@ -389,13 +389,13 @@ echo('  <tr>
     </tr>
   </table>  </td>
 <td class="columnBorder">&nbsp;</td>
-<td width="218" valign="top" style="padding:5px; border-left: #3f7c5f solid 1px; border-right: #3f7c5f solid 1px; border-top: #3f7c5f solid 1px; border-bottom: #3f7c5f solid 2px"><? include("./inc/incmemberbenifits.php"); ?></td>
+<td width="218" valign="top" style="padding:5px; border-left: #3f7c5f solid 1px; border-right: #3f7c5f solid 1px; border-top: #3f7c5f solid 1px; border-bottom: #3f7c5f solid 2px"><?php include("./inc/incmemberbenifits.php"); ?></td>
 </tr>
 </table>	
 <div><strong>&nbsp;</strong></div><strong><BR>
 </strong></td>
 </tr>
-<tr valign="top"><td><? include("./inc/footer.php"); ?></td>
+<tr valign="top"><td><?php include("./inc/footer.php"); ?></td>
 </tr>
 </table>
 </body>
